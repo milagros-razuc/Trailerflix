@@ -10,7 +10,7 @@ module.exports = async (req, res) => {
       ]
     });
 
-    // EJS espera que "categoria" y "genero" estén como propiedades simples:
+
     const pelisFormateadas = pelis.map(p => ({
       titulo: p.titulo,
       poster: p.poster,
