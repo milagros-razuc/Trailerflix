@@ -15,6 +15,10 @@ const getTotalSeries = require('./controllers/getTotalSeries');
 const getSeriesByTemporadas = require('./controllers/getSeriesByTemporadas');
 const putFechaLanzamiento = require('./controllers/putFechaLanzamiento');
 const getCatalogoByPalabraClave = require('./controllers/getCatalogoByPalabraClave');
+const getByMovie = require('./controllers/getCatalogoPorCategoria');
+
+const getByActor = require('./controllers/getByActor')
+const getByMostActor = require('./controllers/getByMostActor')
 
 router.get('/catalogo', getAll);
 router.get('/catalogo/genero', getGenero);
@@ -28,6 +32,10 @@ router.get('/catalogo/totalSeries-peliculas/:id', getTotalSeries);
 router.get('/catalogo/seriesByTemporadas', getSeriesByTemporadas);
 router.put('/catalogo/fechaLanzamiento', putFechaLanzamiento);
 router.get('/catalogo/palabraClave/:palabraClave', getCatalogoByPalabraClave);
+
+router.get('/catalogo/actor',getByActor);
+router.get('/catalogo/actor/mayormenor',getByMostActor);
+router.get('/catalogo/categoria/:id',getByMovie);
 
 
 module.exports = router;
