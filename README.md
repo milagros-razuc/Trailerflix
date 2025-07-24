@@ -71,7 +71,9 @@ La URL base de la API es:
 ```
  http://localhost:<PORT>/catalogo
  ```
+
 Esta ruta devuelve el catalogo con una visual EJS.
+
 ---
 
 ## 📖 Endpoints disponibles
