@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const getAll = require('./controllers/getCatalogo');
+const getCatalogo = require('./controllers/getCatalogo');
 
 const getTagsCombinados = require('./controllers/getTagsCombinados');
 const getGenero = require('./controllers/getByGenero');
@@ -20,7 +20,7 @@ const getByMovie = require('./controllers/getCatalogoPorCategoria');
 const getByActor = require('./controllers/getByActor')
 const getByMostActor = require('./controllers/getByMostActor')
 
-router.get('/catalogo', getAll);
+router.get('/catalogo', getCatalogo);
 router.get('/catalogo/genero', getGenero);
 router.get('/catalogo/genero/:id', getGeneroByPK);
 router.get('/catalogo/tagsCombinados', getTagsCombinados);
