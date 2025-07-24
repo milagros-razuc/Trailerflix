@@ -75,7 +75,7 @@ node src/app.js
 | GET    | `/catalogo/genero`  | Filtra por nombre de género usando las query params         |
 | GET   | `/catalogo/genero/:id`| Filtra por IDs de género              |
 | GET    | `/catalogo/resumen`       | Filtra por palabra clave en el resumen. Por ej: Misión   |
-| GET | `/catalogo/tagsCombinados`       | Trae las peliculas cuyos tags sean enviados por query params  |
+| GET | `/catalogo/tagsCombinados`       | Trae las peliculas cuyos tags estan definidos  |
 | GET    | `/catalogo/series3temporadas`       | Lista series con al menos 3 temporadas    |
 | GET | `/actor/chris-pratt/trabajos`       | Muestra la cantidad de películas/series que hizo Chris Pratt  |
 | GET | `/catalogo/catalogo/totalSeries-peliculas/:id`       | Muestra la cantidad de series o peliculas registrada en el catálogo  |
