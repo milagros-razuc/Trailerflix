@@ -75,13 +75,18 @@ node src/app.js
 | GET    | `/catalogo/genero`  | Filtra por nombre de género usando las query params         |
 | GET   | `/catalogo/genero/:id`| Filtra por IDs de género              |
 | GET    | `/catalogo/resumen`       | Filtra por palabra clave en el resumen. Por ej: Misión   |
-| GET | `/catalogo/tagsCombinados`       | Trae las peliculas cuyos tags sean "Aventura" y "Ciencia Ficción", o "Aventura" y "Fantasía".  |
+| GET | `/catalogo/tagsCombinados`       | Trae las peliculas cuyos tags sean enviados por query params  |
 | GET    | `/catalogo/series3temporadas`       | Lista series con al menos 3 temporadas    |
 | GET | `/actor/chris-pratt/trabajos`       | Muestra la cantidad de películas/series que hizo Chris Pratt  |
 | GET | `/catalogo/catalogo/totalSeries-peliculas/:id`       | Muestra la cantidad de series o peliculas registrada en el catálogo  |
 | GET | `/catalogo/seriesByTemporadas`       | Muestra las series en orden descendente por cantidad de temporadas  |
 | GET | `/catalogo/palabraClave/:palabraClave`      | Muestra películas por palabra clave en título o descripción  |
+|GET | `/catalogo/actor` | Trae las peliculas filtradas por actor|
+|GET|| `/catalogo/actor/mayormenor` |Trae el conteo de las peliculas con mayor y menor cantidad de actores|
+|GET|`'/catalogo/categoria/:id'`| Trae el catalogo filtrado por categoria (serie o pelicula)|
 | PUT | `/catalogo/fechaLanzamiento`       | Modifica la fecha de lanzamiento del género Aventura|
+
+
 ---
 
 ## 🧪 Ejemplo de `GET /catalogo/genero`
