@@ -8,6 +8,7 @@ module.exports = async (req, res) => {
       attributes: ['nombreCompleto'],
       include: {
         model: Catalogo,
+        as: 'Catalogos',
         through: { attributes: [] }, // Para ocultar la tabla intermedia "Reparto"
         attributes: ['titulo'],
         include: [

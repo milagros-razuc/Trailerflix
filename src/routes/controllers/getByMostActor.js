@@ -10,6 +10,7 @@ module.exports = async (req, res) => {
       include: [
         {
           model: Actor,
+          as: 'Actores',
           through: { attributes: [] }
         }
       ]
