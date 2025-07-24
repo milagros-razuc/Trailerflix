@@ -1,38 +1,35 @@
 // Obtener películas con los tags "Aventura" y "Ciencia Ficción", o "Aventura" y "Fantasía".
 
-const { Catalogo, Tag } = require('../../models');
+const Catalogo = require('../../models/catalogo');
+const Tag = require('../../models/tag');
+
+// Obtener películas con los tags "Aventura" y "Ciencia Ficción", o "Aventura" y "Fantasía".
 
 module.exports = async (req, res) => {
   try {
-    const { tags } = req.query;
-
-    if (!tags) {
-      return res.status(400).json({ error: 'Debe proporcionar al menos un tag en la query ?tags=...' });
-    }
-
-    const tagsArray = tags.split(',').map(t => t.trim());
-
     const catalogos = await Catalogo.findAll({
       include: {
         model: Tag,
         as: 'Tags',
         through: { attributes: [] },
         where: {
-          nombre: tagsArray,
+          nombre: ['Aventura', 'Ciencia Ficción', 'Fantasía'],
         },
       },
     });
 
-    // Filtra solo aquellos que tengan *todas* las tags solicitadas
+    // Filtrar por combinación exacta
     const resultado = catalogos.filter(c => {
       const tagNombres = c.Tags.map(t => t.nombre);
-      return tagsArray.every(t => tagNombres.includes(t));
+      return (
+        (tagNombres.includes('Aventura') && tagNombres.includes('Ciencia Ficción')) ||
+        (tagNombres.includes('Aventura') && tagNombres.includes('Fantasía'))
+      );
     });
 
     res.json(resultado);
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: 'Error al buscar por combinación de tags' });
+    res.status(500).json({ error: 'Error al buscar por tags combinados' });
   }
 };
-
