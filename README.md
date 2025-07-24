@@ -72,6 +72,10 @@ node src/app.js
 | GET | `/catalogo/tagsCombinados`       | Trae las peliculas cuyos tags sean "Aventura" y "Ciencia Ficción", o "Aventura" y "Fantasía".  |
 | GET    | `/catalogo/series3temporadas`       | Lista series con al menos 3 temporadas    |
 | GET | `/actor/chris-pratt/trabajos`       | Muestra la cantidad de películas/series que hizo Chris Pratt  |
+| GET | `/catalogo/totalSeries`       | Muestra la cantidad de series registrada en el catálogo  |
+| GET | `/catalogo/seriesByTemporadas`       | Muestra las series en orden descendente por cantidad de temporadas  |
+| GET | `/catalogo/palabraClave/:palabraClave`      | Muestra películas por palabra clave en título o descripción  |
+| PUT | `/catalogo/fechaLanzamiento`       | Modifica la fecha de lanzamiento del género Aventura|
 ---
 
 ## 🧪 Ejemplo de `GET /catalogo/genero`
@@ -106,5 +110,5 @@ GET /catalogo/genero?genero=Acción,Suspenso
 ##  Realizado por:
 
 - Razuc Milagros
-- 
+- Ozuna Rebeca
 - 
