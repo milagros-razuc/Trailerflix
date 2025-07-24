@@ -17,7 +17,7 @@ module.exports = async (req, res) => {
                     { resumen: { [Op.like]: `%${palabraClave}%` } }
                 ],
                 [Op.and]: [
-                    { idCategoria: 12 } // Aseguramos que sea una película,
+                    { idCategoria: 1 } // Aseguramos que sea una película,
                 ]
             }
         });

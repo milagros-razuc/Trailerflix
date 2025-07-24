@@ -3,7 +3,7 @@ const catalogo = require('../../models/catalogo');
 module.exports= async (req, res) => {
     try {
         const series = await catalogo.findAll({
-            where: { idCategoria: 11 }, // id de la categoría "Series"
+            where: { idCategoria: 2 }, // id de la categoría "Series"
             order: [['temporadas', 'DESC']]
         });
         res.status(200).json(series);

@@ -24,7 +24,7 @@ router.get('/catalogo/resumen', getResumenMision);
 router.get('/catalogo/series3temporadas',getSeries3Temp);
 router.get('/actor/chris-pratt/trabajos', getTrabajosChrisPratt);
 
-router.get('/catalogo/totalSeries', getTotalSeries);
+router.get('/catalogo/totalSeries-peliculas/:id', getTotalSeries);
 router.get('/catalogo/seriesByTemporadas', getSeriesByTemporadas);
 router.put('/catalogo/fechaLanzamiento', putFechaLanzamiento);
 router.get('/catalogo/palabraClave/:palabraClave', getCatalogoByPalabraClave);
