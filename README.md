@@ -15,6 +15,12 @@ Una API RESTful desarrollada con **Node.js**, **Express**, **Sequelize** y **MyS
 
 ---
 
+## 🚀 Diagrama de Base de Datos
+![Diagrama del sistema](imagenes/DiagramaBBDD.png)
+
+
+
+
 ## 📁 Estructura del proyecto
 
 
@@ -39,7 +45,7 @@ TrailerFlix-db/
 3. Crear un archivo `.env` en la raíz del proyecto con tus datos de conexión:
 
 ```env
-DB_NAME=poetisas
+DB_NAME=trailerflix
 DB_USER=root
 DB_PASS=tu_contraseña
 DB_HOST=localhost
