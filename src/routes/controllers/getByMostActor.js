@@ -1,16 +1,14 @@
 // Identificar la película/serie con más actores y la que tiene menos actores, indicando la cantidad en cada caso. 
 
 const { Catalogo, Actor } = require('../../models');
-const { Sequelize } = require('sequelize');
 
 module.exports = async (req, res) => {
   try {
-    // Trae todos los catálogos con la cantidad de actores asociados
     const catalogos = await Catalogo.findAll({
       include: [
         {
           model: Actor,
-          as: 'Actores',
+          as: 'Actores', // usa el alias correcto
           through: { attributes: [] }
         }
       ]
@@ -19,7 +17,7 @@ module.exports = async (req, res) => {
     const ordenados = catalogos
       .map(c => ({
         titulo: c.titulo,
-        cantidadActores: c.Actors.length
+        cantidadActores: c.Actores.length // corregido aquí
       }))
       .sort((a, b) => b.cantidadActores - a.cantidadActores);
 
@@ -31,6 +29,7 @@ module.exports = async (req, res) => {
       conMenos
     });
   } catch (error) {
+    console.error(error);
     res.status(500).json({ error: error.message });
   }
 };
