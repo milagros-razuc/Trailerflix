@@ -31,6 +31,7 @@ TrailerFlix-db/
 │   ├── routes/
 │   │   ├── controllers/    # Rutas CRUD 
 │   │   └── index.js        # Enrutador principal
+|   ├── views/              # Visual EJS
 │   ├── database.js         # Conexión a MySQL con Sequelize
 │   └── app.js              # Servidor Express
 ├── .env                    # Variables de entorno (no subir a GitHub)
@@ -65,6 +66,12 @@ npm install
 node src/app.js
 ```
 
+## URL BASE
+La URL base de la API es:
+```
+ http://localhost:<PORT>/catalogo
+ ```
+Esta ruta devuelve el catalogo con una visual EJS.
 ---
 
 ## 📖 Endpoints disponibles
