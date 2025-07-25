@@ -18,7 +18,10 @@ const getCatalogoByPalabraClave = require('./controllers/getCatalogoByPalabraCla
 const getByMovie = require('./controllers/getCatalogoPorCategoria');
 
 const getByActor = require('./controllers/getByActor')
-const getByMostActor = require('./controllers/getByMostActor')
+const getByMostActor = require('./controllers/getByMostActor');
+
+const getActor = require('./controllers/getActor');
+const getRankingWithTitle = require('./controllers/getRankingWithTitle');
 
 router.get('/catalogo', getCatalogo);
 router.get('/catalogo/genero', getGenero);
@@ -36,6 +39,9 @@ router.get('/catalogo/palabraClave/:palabraClave', getCatalogoByPalabraClave);
 router.get('/catalogo/actor',getByActor);
 router.get('/catalogo/actor/mayormenor',getByMostActor);
 router.get('/catalogo/categoria/:id',getByMovie);
+
+router.get('/actor', getActor);
+router.get('/ranking', getRankingWithTitle);
 
 
 module.exports = router;

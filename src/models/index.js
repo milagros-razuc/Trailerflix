@@ -6,6 +6,7 @@ const Tagscatalogo = require('./tagscatalogo');
 const Tags = require('./tag');
 const Reparto = require('./reparto');
 const Actor = require('./actor');
+const Ranking = require('./ranking');
 
 // Relaciones
 Catalogo.belongsTo(Categoria, { 
@@ -43,6 +44,21 @@ Tags.belongsToMany(Catalogo, {
 });
 
 
+Catalogo.hasMany(Ranking, {
+  foreignKey: 'peliculaID',
+  as: 'Rankings',
+  onDelete: 'CASCADE',
+  onUpdate: 'CASCADE',
+});
+
+Ranking.belongsTo(Catalogo, {
+  foreignKey: 'peliculaID',
+  as: 'Catalogo',
+  onDelete: 'CASCADE',
+  onUpdate: 'CASCADE',
+});
+
+
 module.exports = {
     Categoria,
     Genero,
@@ -51,5 +67,6 @@ module.exports = {
     Tags,
     Reparto,
     Tagscatalogo,
-    Actor
+    Actor,
+    Ranking
 };
